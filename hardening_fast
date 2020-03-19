@@ -174,7 +174,7 @@ check-all() {
 			then
 				curitem="$a.$b"
 				database
-				mudacor ciano; echo "Checando item requerido $curitem - $atem..." | tee -a $arquivodelog; mudacor default
+				mudacor ciano; echo "Checando item requerido $curitem - $item..." | tee -a $arquivodelog; mudacor default
 				check-$a$b
 				echo | tee -a $arquivodelog; echo | tee -a $arquivodelog
 			fi

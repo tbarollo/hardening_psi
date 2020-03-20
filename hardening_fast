@@ -865,6 +865,7 @@ apply-312() {
 	echo "Resolva as pendencias abaixo:"
 	for i in $(getent  passwd | awk -F":" '{print $6}') ; do stat $i | grep -i uid; done | tee -a $arquivodelog
 	echo 
+	echo "Permissões devem ser 750 ou mais restritivas."
 }
 
 check-313() {

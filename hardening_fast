@@ -2021,7 +2021,7 @@ case "$1" in
 		apply-unico
 		;;
 	*)
-		echo $"Usage: hardening_fast (check | summary | apply [numero] | check [numero])"
+		echo $"Usage: hardening_fast (check-all | summary | apply [numero] | check [numero])"
 		exit 1
 		;;
 esac

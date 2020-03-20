@@ -1291,13 +1291,18 @@ apply-408() {
 }
 
 check-409() {
+	local retorno=0
 	echo '-	Comando: grep Ciphers /etc/ssh/sshd_config' | tee -a $arquivodelog
 	echo "-	Resultado: " | tee -a $arquivodelog
 	mudacor default
 
 	grep Ciphers /etc/ssh/sshd_config | tee -a $arquivodelog
-	egrep -q "^Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes256-cbc" /etc/ssh/sshd_config
-	check-conformidade
+	egrep -q "^KexAlgorithms curve25519-sha256@libssh.org" /etc/ssh/sshd_config && true || ((retorno++))
+	egrep -q "^Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr" /etc/ssh/sshd_config && true || ((retorno++))
+	egrep -q "^MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com" /etc/ssh/sshd_config && true || ((retorno++))
+
+	[ $retorno -eq 0 ] && true || false
+	check-warning
 }
 
 apply-409() {

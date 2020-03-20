@@ -9,7 +9,7 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-arquivodelog="hardening.log"
+arquivodelog="hardening_fast.log"
 
 if [[ -f "$arquivodelog" ]]; then
 	arquivologsemsulfixo=$(ls $arquivodelog | sed 's/\..*//g')

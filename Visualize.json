@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "45febed0-d14d-11e8-9f6e-95c9c5cb15a3",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] User bytes recieved",
+      "visState": "{\"title\":\"user bytes recieved\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user.keyword\",\"size\":10,\"orderAgg\":{\"id\":\"2-orderAgg\",\"enabled\":true,\"type\":\"max\",\"schema\":\"orderAgg\",\"params\":{\"field\":\"bytes_recieved\"}},\"order\":\"desc\",\"orderBy\":\"custom\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"user.keyword\",\"value\":\"admin\",\"params\":{\"query\":\"admin\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"user.keyword\":{\"query\":\"admin\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"user\",\"value\":\"ntp_daemon\",\"params\":{\"query\":\"ntp_daemon\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"user\":{\"query\":\"ntp_daemon\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "5b3ede50-f237-11e8-aa51-2b28ce25fee5",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Action on users",
+      "visState": "{\"title\":\"action on users\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"action.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user.keyword\",\"size\":8,\"order\":\"desc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"user.keyword\",\"value\":\"admin\",\"params\":{\"query\":\"admin\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"user.keyword\":{\"query\":\"admin\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "df383710-f232-11e8-aa51-2b28ce25fee5",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Allowed Policies",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"field\":\"bytes_recieved\"},\"schema\":\"metric\",\"type\":\"sum\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"field\":\"policyname.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderAgg\":{\"enabled\":true,\"id\":\"3-orderAgg\",\"params\":{},\"schema\":{\"aggFilter\":[\"!top_hits\",\"!percentiles\",\"!median\",\"!std_dev\",\"!derivative\",\"!moving_avg\",\"!serial_diff\",\"!cumulative_sum\",\"!avg_bucket\",\"!max_bucket\",\"!min_bucket\",\"!sum_bucket\"],\"deprecate\":false,\"editor\":false,\"group\":\"none\",\"hideCustomLabel\":true,\"max\":null,\"min\":0,\"name\":\"orderAgg\",\"params\":[],\"title\":\"Order Agg\"},\"type\":\"count\"},\"orderBy\":\"custom\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":8},\"schema\":\"segment\",\"type\":\"terms\"}],\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"title\":\"Allowed Policies\",\"type\":\"pie\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "edd24db0-d158-11e8-9f6e-95c9c5cb15a3",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Bytes sent and recieved per user",
+      "visState": "{\"title\":\"bytes sent and recieved per user\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMetricsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":true,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user.keyword\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"user.keyword\",\"value\":\"admin\",\"params\":{\"query\":\"admin\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"user.keyword\":{\"query\":\"admin\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"user.keyword\",\"value\":\"ntp_daemon\",\"params\":{\"query\":\"ntp_daemon\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"user.keyword\":{\"query\":\"ntp_daemon\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "d86f3880-f23b-11e8-aa51-2b28ce25fee5",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Service bytes",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"field\":\"service.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderAgg\":{\"enabled\":true,\"id\":\"2-orderAgg\",\"params\":{\"field\":\"bytes_recieved\"},\"schema\":{\"aggFilter\":[\"!top_hits\",\"!percentiles\",\"!median\",\"!std_dev\",\"!derivative\",\"!moving_avg\",\"!serial_diff\",\"!cumulative_sum\",\"!avg_bucket\",\"!max_bucket\",\"!min_bucket\",\"!sum_bucket\"],\"deprecate\":false,\"editor\":false,\"group\":\"none\",\"hideCustomLabel\":true,\"max\":null,\"min\":0,\"name\":\"orderAgg\",\"params\":[],\"title\":\"Order Agg\"},\"type\":\"sum\"},\"orderBy\":\"custom\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":12},\"schema\":\"segment\",\"type\":\"terms\"}],\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"title\":\"service bytes\",\"type\":\"pie\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "9ebd8130-f238-11e8-aa51-2b28ce25fee5",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Block and allow",
+      "visState": "{\"title\":\"Block/allow\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"utmaction.keyword\",\"size\":8,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "cf74bcd0-d13b-11e8-9f6e-95c9c5cb15a3",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Bytes recieved per IP",
+      "visState": "{\"title\":\"bytes-recieved-per-IP\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"src_ip.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "74321b40-f497-11e8-9e2f-a78fb2d25a38",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] Debit on policy",
+      "visState": "{\"title\":\"debit on policy\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":true,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average bytes_recieved\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Average bytes_recieved\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"policyname.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "7e9faef0-d13b-11e8-9f6e-95c9c5cb15a3",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Fortigate] App recieved",
+      "visState": "{\"title\":\"app recieved\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"labels\":{\"last_level\":true,\"show\":true,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"app.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"447b2e10-d137-11e8-9f6e-95c9c5cb15a3\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  }
+]
